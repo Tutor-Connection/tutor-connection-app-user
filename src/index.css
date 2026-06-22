@@ -1,0 +1,229 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Plus Jakarta Sans", sans-serif;
+
+  /* Primary */
+  --color-primary: #0037b0;
+  --color-on-primary: #ffffff;
+  --color-primary-container: #1d4ed8;
+  --color-on-primary-container: #cad3ff;
+  --color-inverse-primary: #b7c4ff;
+  
+  /* Secondary */
+  --color-secondary: #9d4300;
+  --color-on-secondary: #ffffff;
+  --color-secondary-container: #fd761a;
+  --color-on-secondary-container: #5c2400;
+
+  /* Tertiary */
+  --color-tertiary: #004f35;
+  --color-on-tertiary: #ffffff;
+  --color-tertiary-container: #006a48;
+  --color-on-tertiary-container: #60eeb1;
+
+  /* Error */
+  --color-error: #ba1a1a;
+  --color-on-error: #ffffff;
+  --color-error-container: #ffdad6;
+  --color-on-error-container: #93000a;
+
+  /* Backgrounds & Surfaces */
+  --color-background: #f9f9ff;
+  --color-on-background: #151c27;
+
+  --color-surface: #f9f9ff;
+  --color-on-surface: #151c27;
+  --color-on-surface-variant: #434655;
+  --color-inverse-surface: #2a313d;
+  --color-inverse-on-surface: #ebf1ff;
+
+  --color-surface-dim: #d3daea;
+  --color-surface-bright: #f9f9ff;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-low: #f0f3ff;
+  --color-surface-container: #e7eefe;
+  --color-surface-container-high: #e2e8f8;
+  --color-surface-container-highest: #dce2f3;
+
+  --color-outline: #747686;
+  --color-outline-variant: #c4c5d7;
+
+  /* Fixed colors */
+  --color-primary-fixed: #dce1ff;
+  --color-primary-fixed-dim: #b7c4ff;
+  --color-on-primary-fixed: #001551;
+  --color-on-primary-fixed-variant: #0039b5;
+
+  --color-secondary-fixed: #ffdbca;
+  --color-secondary-fixed-dim: #ffb690;
+  --color-on-secondary-fixed: #341100;
+  --color-on-secondary-fixed-variant: #783200;
+
+  --color-tertiary-fixed: #6ffbbe;
+  --color-tertiary-fixed-dim: #4edea3;
+  --color-on-tertiary-fixed: #002113;
+  --color-on-tertiary-fixed-variant: #005236;
+}
+
+@layer base {
+  body {
+    @apply bg-background text-on-surface font-sans antialiased transition-colors duration-300;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  h1, h2, h3, h4, .font-display {
+    @apply font-display tracking-tight;
+  }
+}
+
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-smoothing: antialiased;
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+/* Typographic presets from TutorSync */
+.font-h1-mobile {
+  font-family: "Plus Jakarta Sans", "Inter", sans-serif;
+  font-size: 24px;
+  line-height: 32px;
+}
+.font-h1-desktop {
+  font-family: "Plus Jakarta Sans", "Inter", sans-serif;
+  font-size: 32px;
+  line-height: 40px;
+}
+.font-h2-mobile {
+  font-family: "Plus Jakarta Sans", "Inter", sans-serif;
+  font-size: 18px;
+  line-height: 24px;
+}
+.font-h3 {
+  font-family: "Plus Jakarta Sans", "Inter", sans-serif;
+  font-size: 15px;
+  line-height: 20px;
+}
+.font-body-lg {
+  font-size: 16px;
+  line-height: 24px;
+}
+.font-body-reg {
+  font-size: 14px;
+  line-height: 20px;
+}
+.font-body-sm {
+  font-size: 12px;
+  line-height: 16px;
+}
+.font-caption {
+  font-size: 11px;
+  line-height: 14px;
+}
+
+/* Glass card design pattern */
+.glass-card {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.glass-panel {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+}
+
+/* Scroll container hides scrollbars while remaining fully scrollable */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+/* Soft custom scrollbars */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.3);
+  border-radius: 999px;
+}
+.dark .custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Micro interaction keyframes */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.96); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
+
+@keyframes progressFlow {
+  from { width: 0%; }
+  to { width: 100%; }
+}
+
+@keyframes pulseSubtle {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.92; }
+}
+
+@keyframes typing {
+  0%, 60%, 100% { transform: translateY(0); }
+  30% { transform: translateY(-4px); }
+}
+
+.typing-dot {
+  animation: typing 1.4s infinite;
+}
+.typing-dot:nth-child(2) { animation-delay: 0.2s; }
+.typing-dot:nth-child(3) { animation-delay: 0.4s; }
+
+.animate-fade-in {
+  animation: fadeIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.2s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-progress-flow {
+  animation: progressFlow 2s ease-in-out forwards;
+}
+
+.animate-pulse-subtle {
+  animation: pulseSubtle 2s infinite ease-in-out;
+}
